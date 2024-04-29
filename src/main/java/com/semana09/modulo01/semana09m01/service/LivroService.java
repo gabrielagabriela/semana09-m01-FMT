@@ -13,4 +13,14 @@ public class LivroService {
     }
 
     public List<Livro> buscarTodos(){return Livro.getListaDeLivros();}
+
+    public Livro buscarPorId(Integer id) throws Exception {
+        return Livro.buscarPorId(id);
+    }
+
+    public void delete(Integer id) throws Exception{
+        Livro livro = buscarPorId(id);
+        Livro.getListaDeLivros().remove(livro);
+    }
+
 }

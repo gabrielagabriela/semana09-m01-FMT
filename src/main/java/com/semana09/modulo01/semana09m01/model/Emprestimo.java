@@ -14,7 +14,7 @@ public class Emprestimo {
 
     public static Integer proximoId = 1;
     @Setter(AccessLevel.NONE)private Integer id;
-    private Livro id_livro;
+    private Emprestimo id_emprestimo;
     private Membros id_membros;
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
@@ -25,5 +25,14 @@ public class Emprestimo {
         emprestimo.id = proximoId++;
         listaDeEmprestimo.add(emprestimo);
         return emprestimo;
+    }
+
+    public static Emprestimo buscarPorId(Integer id) throws Exception {
+        for(Emprestimo emprestimo: listaDeEmprestimo){
+            if(emprestimo.getId().equals(id)){
+                return emprestimo;
+            }
+        }
+        throw new Exception("Emprestimo não encontrado");
     }
 }

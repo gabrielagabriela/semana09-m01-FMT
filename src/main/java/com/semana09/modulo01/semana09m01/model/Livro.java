@@ -24,4 +24,13 @@ public class Livro {
         return livro;
     }
 
+    public static Livro buscarPorId(Integer id) throws Exception {
+        for(Livro livro: listaDeLivros){
+            if(livro.getId().equals(id)){
+                return livro;
+            }
+        }
+        throw new Exception("Livro não encontrado");
+    }
+
 }

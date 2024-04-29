@@ -26,4 +26,10 @@ public class MembrosController {
     public List<Membros> get(){
         return membrosService.buscarTodos();
     }
+
+
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Integer id) throws Exception{
+        membrosService.delete(id);
+    }
 }

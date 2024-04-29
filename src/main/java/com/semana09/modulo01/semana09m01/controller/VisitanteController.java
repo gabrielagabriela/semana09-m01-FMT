@@ -26,4 +26,10 @@ public class VisitanteController {
     public List<Visitante> get(){
         return visitanteService.buscarTodos();
     }
+
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Integer id) throws Exception{
+        visitanteService.delete(id);
+    }
+
 }

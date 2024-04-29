@@ -26,4 +26,9 @@ public class LivroController {
         return livroService.buscarTodos();
     }
 
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Integer id) throws Exception{
+        livroService.delete(id);
+    }
+
 }

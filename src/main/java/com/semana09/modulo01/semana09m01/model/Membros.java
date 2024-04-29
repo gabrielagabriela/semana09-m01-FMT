@@ -25,4 +25,14 @@ public class Membros {
         return membros;
     }
 
+    public static Membros buscarPorId(Integer id) throws Exception {
+        for(Membros membros: listaDeMembross){
+            if(membros.getId().equals(id)){
+                return membros;
+            }
+        }
+        throw new Exception("Membros não encontrado");
+    }
+
+
 }

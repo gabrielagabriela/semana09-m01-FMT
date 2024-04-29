@@ -25,4 +25,13 @@ public class Bibliotecario {
         return bibliotecario;
     }
 
+    public static Bibliotecario buscarPorId(Integer id) throws Exception {
+        for(Bibliotecario bibliotecario: listaDeBibliotecario){
+            if(bibliotecario.getId().equals(id)){
+                return bibliotecario;
+            }
+        }
+        throw new Exception("Bibliotecario não encontrado");
+    }
+
 }

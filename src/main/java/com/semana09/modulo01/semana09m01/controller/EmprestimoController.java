@@ -27,4 +27,9 @@ public class EmprestimoController {
         return emprestimoService.buscarTodos();
     }
 
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Integer id) throws Exception{
+        emprestimoService.delete(id);
+    }
+
 }

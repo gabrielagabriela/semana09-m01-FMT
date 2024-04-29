@@ -24,6 +24,14 @@ public class Visitante {
         return visitante;
     }
 
+    public static Visitante buscarPorId(Integer id) throws Exception {
+        for(Visitante visitante: listaDeVisitantes){
+            if(visitante.getId().equals(id)){
+                return visitante;
+            }
+        }
+        throw new Exception("Visitante não encontrado");
+    }
 
 
 }

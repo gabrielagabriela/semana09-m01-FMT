@@ -27,4 +27,10 @@ public class BibliotecarioController {
         return bibliotecarioService.buscarTodos();
     }
 
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Integer id) throws Exception{
+        bibliotecarioService.delete(id);
+    }
+
+
 }
