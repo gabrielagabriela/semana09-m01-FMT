@@ -35,4 +35,9 @@ public class LivroController {
         return livroService.update(id, livro);
     }
 
+    @PutMapping("update-query/{id}")
+    public Livro updateWithQuery(@PathVariable Integer id, @RequestBody Livro livro) {
+        return livroService.updateWithQuery(id, livro);
+    }
+
 }
