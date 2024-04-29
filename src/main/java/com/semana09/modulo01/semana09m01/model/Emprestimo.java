@@ -13,7 +13,7 @@ import java.util.List;
 public class Emprestimo {
 
     public static Integer proximoId = 1;
-    @Setter(AccessLevel.NONE)private Integer id;
+    Integer id;
     private Emprestimo id_emprestimo;
     private Membros id_membros;
     private LocalDate dataEmprestimo;

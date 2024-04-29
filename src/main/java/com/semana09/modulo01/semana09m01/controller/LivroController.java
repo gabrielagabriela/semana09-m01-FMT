@@ -30,5 +30,9 @@ public class LivroController {
     public void delete(@PathVariable Integer id) throws Exception{
         livroService.delete(id);
     }
+    @PutMapping("{id}")
+    public Livro update(@PathVariable Integer id, @RequestBody Livro livro) throws Exception{
+        return livroService.update(id, livro);
+    }
 
 }

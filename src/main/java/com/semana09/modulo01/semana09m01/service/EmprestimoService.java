@@ -2,6 +2,7 @@ package com.semana09.modulo01.semana09m01.service;
 
 import com.semana09.modulo01.semana09m01.model.Emprestimo;
 import com.semana09.modulo01.semana09m01.model.Emprestimo;
+import com.semana09.modulo01.semana09m01.model.Emprestimo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,4 +24,15 @@ public class EmprestimoService {
         Emprestimo emprestimo = buscarPorId(id);
         Emprestimo.getListaDeEmprestimo().remove(emprestimo);
     }
+
+    public Emprestimo update(Integer id, Emprestimo emprestimo)  throws Exception{
+        Emprestimo emprestimoPesquisado = buscarPorId(id);
+        emprestimoPesquisado.setId(id);
+        emprestimoPesquisado.setId_emprestimo(emprestimo.getId_emprestimo());
+        emprestimoPesquisado.setId_membros(emprestimo.getId_membros());
+        emprestimoPesquisado.setDataEmprestimo(emprestimo.getDataEmprestimo());
+        emprestimoPesquisado.setDataDevolucao(emprestimo.getDataDevolucao());
+        return emprestimoPesquisado;
+    }
+
 }

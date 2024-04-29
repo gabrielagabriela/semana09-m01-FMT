@@ -2,6 +2,7 @@ package com.semana09.modulo01.semana09m01.controller;
 
 import com.semana09.modulo01.semana09m01.model.Bibliotecario;
 import com.semana09.modulo01.semana09m01.model.Emprestimo;
+import com.semana09.modulo01.semana09m01.model.Emprestimo;
 import com.semana09.modulo01.semana09m01.service.EmprestimoService;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,5 +32,11 @@ public class EmprestimoController {
     public void delete(@PathVariable Integer id) throws Exception{
         emprestimoService.delete(id);
     }
+
+    @PutMapping("{id}")
+    public Emprestimo update(@PathVariable Integer id, @RequestBody Emprestimo emprestimo) throws Exception{
+        return emprestimoService.update(id, emprestimo);
+    }
+
 
 }

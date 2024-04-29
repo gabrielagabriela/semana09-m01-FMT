@@ -2,6 +2,7 @@ package com.semana09.modulo01.semana09m01.service;
 
 import com.semana09.modulo01.semana09m01.model.Bibliotecario;
 import com.semana09.modulo01.semana09m01.model.Bibliotecario;
+import com.semana09.modulo01.semana09m01.model.Bibliotecario;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,4 +25,12 @@ public class BibliotecarioService {
         Bibliotecario.getListaDeBibliotecario().remove(bibliotecario);
     }
 
+    public Bibliotecario update(Integer id, Bibliotecario bibliotecario)  throws Exception{
+        Bibliotecario bibliotecarioPesquisado = buscarPorId(id);
+        bibliotecarioPesquisado.setId(id);
+        bibliotecarioPesquisado.setNome(bibliotecario.getNome());
+        bibliotecarioPesquisado.setEmail(bibliotecario.getEmail());
+        bibliotecarioPesquisado.setSenha(bibliotecario.getSenha());
+        return bibliotecarioPesquisado;
+    }
 }

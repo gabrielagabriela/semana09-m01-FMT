@@ -23,4 +23,12 @@ public class LivroService {
         Livro.getListaDeLivros().remove(livro);
     }
 
+    public Livro update(Integer id, Livro livro)  throws Exception{
+        Livro livroPesquisado = buscarPorId(id);
+        livroPesquisado.setId(id);
+        livroPesquisado.setTitulo(livro.getTitulo());
+        livroPesquisado.setAutor(livro.getAutor());
+        return livroPesquisado;
+    }
+
 }

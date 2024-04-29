@@ -2,6 +2,7 @@ package com.semana09.modulo01.semana09m01.service;
 
 import com.semana09.modulo01.semana09m01.model.Visitante;
 import com.semana09.modulo01.semana09m01.model.Visitante;
+import com.semana09.modulo01.semana09m01.model.Visitante;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,5 +23,13 @@ public class VisitanteService {
     public void delete(Integer id) throws Exception{
         Visitante visitante = buscarPorId(id);
         Visitante.getListaDeVisitantes().remove(visitante);
+    }
+
+    public Visitante update(Integer id, Visitante visitante)  throws Exception{
+        Visitante visitantePesquisado = buscarPorId(id);
+        visitantePesquisado.setId(id);
+        visitantePesquisado.setNome(visitante.getNome());
+        visitantePesquisado.setTelefone(visitante.getTelefone());
+        return visitantePesquisado;
     }
 }

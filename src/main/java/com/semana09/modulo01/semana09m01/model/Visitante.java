@@ -12,7 +12,7 @@ import java.util.List;
 public class Visitante {
 
     public static Integer proximoId = 1;
-    @Setter(AccessLevel.NONE)private Integer id;
+    Integer id;
     private String nome;
     private String telefone;
     @Getter

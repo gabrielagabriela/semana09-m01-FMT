@@ -12,7 +12,7 @@ import java.util.List;
 public class Membros {
 
     public static Integer proximoId = 1;
-    @Setter(AccessLevel.NONE)private Integer id;
+    private Integer id;
     private String nome;
     private String endereco;
     private String telefone;
