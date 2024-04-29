@@ -2,7 +2,11 @@ package com.semana09.modulo01.semana09m01.model;
 
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 public class Membros {
@@ -12,5 +16,13 @@ public class Membros {
     private String nome;
     private String endereco;
     private String telefone;
+    @Getter
+    private static List<Membros> listaDeMembross = new ArrayList<>();
+
+    public static Membros inserir(Membros membros){
+        membros.id = proximoId++;
+        listaDeMembross.add(membros);
+        return membros;
+    }
 
 }
